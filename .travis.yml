@@ -6,4 +6,5 @@ services:
 script:
   - scripts/./enter.sh
   - make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external xy_defconfig
+  - exit
   - ./getimage.sh
