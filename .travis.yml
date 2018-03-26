@@ -6,12 +6,8 @@ services:
 script:
   - echo "1 Step ##########################"
   - scripts/./enter.sh
-  - echo "2 Step ##########################"  
-  - exit
-  - docker exec make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external xy_defconfig
-  - ls -la
-  - echo "3 Step ##########################"  
-  - exit
+  - echo 'make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external xy_defconfig'
+  - echo 'exit'
   - ls -la
 after_script:
   - echo "4 Step ##########################"
