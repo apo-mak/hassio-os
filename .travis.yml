@@ -6,7 +6,7 @@ services:
 script:
   - echo "1 Step ##########################"
   - scripts/./enter.sh
-  - echo 'make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external xy_defconfig'
+  - echo 'make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external defconfig BR2_DEFCONFIG=/build/buildroot-external/configs/xy_defconfig'
   - echo 'exit'
   - ls -la
 after_script:
