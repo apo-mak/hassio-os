@@ -4,16 +4,14 @@ services:
   - docker
   
 script:
-  - echo "1 ##########################"
-  - ls -la
+  - echo "1 Step ##########################"
   - scripts/./enter.sh
+  - echo "2 Step ##########################"  
+  - exit
+  - docker exec make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external xy_defconfig
   - ls -la
-  - echo "2 ##########################"
-  - make -C /build/buildroot BR2_EXTERNAL=/build/buildroot-external xy_defconfig
-  - ls -la
-  - echo "3 ##########################"  
+  - echo "3 Step ##########################"  
   - exit
   - ls -la
-  - echo "4 ##########################"
+  - echo "4 Step ##########################"
   - ./getimage.sh
-  - ls -la
